@@ -11,7 +11,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "hello_app/requirements.txt" }}
+            - v1-dependencies-{{ checksum "src/requirements.txt" }}
       - run:
           name: Install dependencies
           command: |
@@ -21,7 +21,7 @@ jobs:
       - save_cache:
           paths:
             - ./.devops-capstone
-          key: v1-dependencies-{{ checksum "hello_app/requirements.txt" }}
+          key: v1-dependencies-{{ checksum "src/requirements.txt" }}
       - run:
           name: Run lint
           command: |
