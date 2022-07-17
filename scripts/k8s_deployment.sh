@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# This tags and uploads an image to Docker Hub
-
-# Set vars
 DOCKER_HUB_ID="registry.hub.docker.com/dungtnt2244"
 DOCKER_REPOSITORY="hello-app"
 DEPLOYMENT_NAME=${DOCKER_REPOSITORY}
@@ -12,10 +9,8 @@ REPLICAS=4
 
 dockerpath=${DOCKER_HUB_ID}/${DOCKER_REPOSITORY}:${VERSION}
 
-# Run the Docker Hub container with kubernetes
 kubectl create deployment ${DEPLOYMENT_NAME} --image=${dockerpath} --replicas=${REPLICAS} && kubectl expose deployment/${DEPLOYMENT_NAME} --type="LoadBalancer" --port ${CONTAINER_PORT}
 
-# List kubernetes resources
 echo
 echo "Listing deployments"
 kubectl get deployments -o wide
