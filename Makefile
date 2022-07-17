@@ -14,6 +14,8 @@ setup:
 install:
 	pip install --upgrade pip && pip install -r src/requirements.txt
 	pytest --version
+	pwd
+	ls
 	./scripts/install_shellcheck.sh
 	./scripts/install_hadolint.sh
 	./scripts/install_kubectl.sh
