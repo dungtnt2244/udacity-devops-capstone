@@ -37,14 +37,4 @@ jobs:
 workflows:
   default:
     jobs:
-      - init        
-      - docker/publish:
-          matrix:
-            parameters:
-              image: [dungtnt2244/hello-app]
-              path: [hello_app]
-              docker-context: [hello_app]
-              deploy: [true]
-              tag: ['$(<hello_app/VERSION.txt)', 'latest']
-              update-description: [true]    
-          requires: [init]
+      - init
