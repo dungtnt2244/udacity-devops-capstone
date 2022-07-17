@@ -41,7 +41,7 @@ workflows:
       - docker/publish:
           matrix:
             parameters:
-              image: [$DOCKER_LOGIN/hello-app]
+              image: [dungtnt2244/hello-app]
               path: [hello_app]
               docker-context: [hello_app]
               deploy: [true]
