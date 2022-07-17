@@ -18,6 +18,7 @@ jobs:
             python3 -m venv .devops-capstone
             source .devops-capstone/bin/activate
             mkdir bin
+            chmod +x ./scripts/*
             make install
       - save_cache:
           paths:
