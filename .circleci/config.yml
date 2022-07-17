@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Run lint
           command: |
-            ls
+            ls bin
             source .devops-capstone/bin/activate
             make lint
 
