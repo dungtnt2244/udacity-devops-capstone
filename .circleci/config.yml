@@ -40,6 +40,7 @@ workflows:
       - init
       - docker/publish:
           image: $DOCKER_LOGIN/$DOCKER_IMAGE
+          docker-context: './src/'
           path: ./src/
           tag: "3.0"
           requires:
