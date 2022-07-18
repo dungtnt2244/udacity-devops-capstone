@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@1.5.0
+  docker: circleci/docker@2.1.2
 
 jobs:
   init:
@@ -33,6 +33,15 @@ jobs:
             ls bin
             source .devops-capstone/bin/activate
             make lint
+
+  build-and-publish-docker-image:
+    jobs:
+      - docker/publish:
+          image: $DOCKER_LOGIN/$DOCKER_IMAGE
+          path: ./src/
+          tag: 3.000
+
+
 
 workflows:
   default:
