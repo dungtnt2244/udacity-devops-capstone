@@ -33,13 +33,13 @@ jobs:
             ls bin
             source .devops-capstone/bin/activate
             make lint
-  
+
 workflows:
   default:
     jobs:
       - init
       - docker/publish:
-          image: ${DOCKER_LOGIN_USERNAME}/${DOCKER_IMAGE_NAME}
+          image: dungtnt2244/hello-app
           docker-context: './src/'
           path: ./src/
           requires:
