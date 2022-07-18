@@ -41,6 +41,6 @@ workflows:
       - docker/publish:
           image: $DOCKER_LOGIN/$DOCKER_IMAGE
           path: ./src/
-          tag: 3.000
+          tag: "3.0"
           requires:
             - init
