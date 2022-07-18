@@ -38,11 +38,9 @@ workflows:
   default:
     jobs:
       - init
-      - build-and-publish-docker-image:
-          jobs:
-            - docker/publish:
-                image: $DOCKER_LOGIN/$DOCKER_IMAGE
-                path: ./src/
-                tag: 3.000
+      - docker/publish:
+          image: $DOCKER_LOGIN/$DOCKER_IMAGE
+          path: ./src/
+          tag: 3.000
           requires:
             - init
