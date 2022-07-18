@@ -39,7 +39,7 @@ workflows:
     jobs:
       - init
       - docker/publish:
-          image: $DOCKER_LOGIN/$DOCKER_IMAGE
+          image: dungtnt2244/hello-app
           docker-context: './src/'
           path: ./src/
           tag: "3.0"
