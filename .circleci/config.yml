@@ -42,6 +42,5 @@ workflows:
           image: dungtnt2244/hello-app
           docker-context: './src/'
           path: ./src/
-          tag: "3.0"
           requires:
             - init
