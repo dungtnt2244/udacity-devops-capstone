@@ -47,3 +47,6 @@ workflows:
   default:
     jobs:
       - init
+      - build-and-publish-docker-image:
+          requires:
+            - init
